@@ -17,6 +17,7 @@
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",
     "@astrojs/node": "^10.0.4",
+    "@astrojs/vercel": "^10.0.4",
     "@lucide/astro": "^1.7.0",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.1",
