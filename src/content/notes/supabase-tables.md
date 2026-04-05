@@ -13,7 +13,7 @@ This guide covers table creation, relationship types, and constraints for Supaba
 
 ---
 
-## 1. Creating Tables
+## Creating Tables
 
 ```sql
 -- Basic table
@@ -25,7 +25,7 @@ CREATE TABLE users (
 );
 ```
 
-## 2. Relationships
+## Relationships
 
 ### One-to-Many (has many)
 
@@ -68,7 +68,7 @@ CREATE TABLE profiles (
 );
 ```
 
-## 3. Constraints
+## Constraints
 
 ### Primary Key
 
@@ -146,7 +146,7 @@ CREATE TYPE post_status AS ENUM ('draft', 'published', 'archived');
 ALTER TABLE posts ADD COLUMN status post_status DEFAULT 'draft';
 ```
 
-## 4. Quick Reference
+## Quick Reference
 
 | Relationship | Implementation                   |
 | ------------ | -------------------------------- |

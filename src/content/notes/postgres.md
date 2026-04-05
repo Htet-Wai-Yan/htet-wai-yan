@@ -4,14 +4,14 @@ description: "Complete guide to PostgreSQL basics, queries, joins, and operation
 tags: ["postgresql", "sql", "database"]
 updated: "2026-03-24"
 coAuthor: "opencode"
-sections: ["Basic Commands", "Create & Manage Databases", "Create & Manage Tables", "CRUD Operations", "Constraints", "Joins", "Aggregations", "Subqueries", "Common Functions", "Views", "Indexes", "Transactions", "Export & Import", "User Management", "Useful Tips"]
+sections: ["Basic Commands", "Create And Manage Databases", "Create And Manage Tables", "CRUD Operations", "Constraints", "Joins", "Aggregations", "Subqueries", "Common Functions", "Views", "Indexes", "Transactions", "Export And Import", "User Management", "Useful Tips"]
 ---
 
 # PostgreSQL
 
 ---
 
-## 1. Basic Commands
+## Basic Commands
 
 ### Connect to database
 
@@ -33,7 +33,7 @@ psql -U postgres  # default superuser
 \x          -- expanded display (better for wide tables)
 ```
 
-## 2. Create & Manage Databases
+## Create And Manage Databases
 
 ```sql
 -- Create database
@@ -46,7 +46,7 @@ DROP DATABASE mydb;
 \c mydb
 ```
 
-## 3. Create & Manage Tables
+## Create And Manage Tables
 
 ```sql
 CREATE TABLE users (
@@ -83,7 +83,7 @@ ALTER TABLE users DROP COLUMN phone;
 ALTER TABLE users RENAME TO customers;
 ```
 
-## 4. CRUD Operations
+## CRUD Operations
 
 ### Create (Insert)
 
@@ -166,7 +166,7 @@ DELETE FROM users;
 DELETE FROM users WHERE id = 5 RETURNING id, name;
 ```
 
-## 5. Constraints
+## Constraints
 
 ```sql
 CREATE TABLE examples (
@@ -197,7 +197,7 @@ ALTER TABLE users ADD CONSTRAINT unique_email UNIQUE (email);
 ALTER TABLE orders ADD CONSTRAINT positive_price CHECK (price > 0);
 ```
 
-## 6. Joins
+## Joins
 
 ### Sample tables for examples
 
@@ -255,7 +255,7 @@ JOIN orders o ON u.id = o.user_id
 JOIN products p ON o.product_id = p.id;
 ```
 
-## 7. Aggregations
+## Aggregations
 
 ```sql
 -- Count
@@ -289,7 +289,7 @@ FROM users
 GROUP BY country;
 ```
 
-## 8. Subqueries
+## Subqueries
 
 ```sql
 -- Subquery in WHERE
@@ -311,7 +311,7 @@ SELECT * FROM products
 WHERE category_id IN (SELECT id FROM categories WHERE name = 'Electronics');
 ```
 
-## 9. Common Functions
+## Common Functions
 
 ### String functions
 
@@ -360,7 +360,7 @@ SELECT COALESCE(phone, 'N/A') FROM users;
 SELECT NULLIF(a, b);  -- returns null if a = b, else returns a
 ```
 
-## 10. Views
+## Views
 
 ```sql
 -- Create view
@@ -378,7 +378,7 @@ SELECT name, email, created_at FROM users WHERE status = 'active';
 DROP VIEW active_users;
 ```
 
-## 11. Indexes
+## Indexes
 
 ```sql
 -- Create index
@@ -407,7 +407,7 @@ DROP INDEX idx_users_email;
 -- - Frequently updated columns
 ```
 
-## 12. Transactions
+## Transactions
 
 ```sql
 BEGIN;  -- or START TRANSACTION;
@@ -436,7 +436,7 @@ COMMIT;
 -- Only Alice will be inserted
 ```
 
-## 13. Export & Import
+## Export And Import
 
 ### Export to CSV
 
@@ -453,7 +453,7 @@ DELIMITER ','
 CSV HEADER;
 ```
 
-## 14. User Management
+## User Management
 
 ```sql
 -- Create user
@@ -474,7 +474,7 @@ DROP USER alice;
 ALTER USER alice WITH PASSWORD 'newpassword';
 ```
 
-## 15. Useful Tips
+## Useful Tips
 
 ```sql
 -- Get table size

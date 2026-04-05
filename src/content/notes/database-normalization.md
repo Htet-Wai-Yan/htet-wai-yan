@@ -4,7 +4,7 @@ description: "Learn database normalization forms (1NF to BCNF) with practical ex
 tags: ["database", "normalization", "sql"]
 updated: "2026-03-24"
 coAuthor: "opencode"
-sections: ["1NF - First Normal Form", "2NF - Second Normal Form", "3NF - Third Normal Form", "BCNF - Boyce-Codd Normal Form", "Summary", "Rules of Thumb for Schema Design"]
+sections: ["First Normal Form", "Second Normal Form", "Third Normal Form", "Boyce-Codd Normal Form", "Summary", "Rules Of Thumb For Schema Design"]
 ---
 
 # Database Normalization
@@ -13,7 +13,7 @@ This guide follows a relatable example: an **online store** that sells products 
 
 ---
 
-## 1NF - First Normal Form
+## First Normal Form
 
 **Rule:** Each cell holds one single value. No repeating groups.
 
@@ -66,7 +66,7 @@ CREATE TABLE order_items (
 );
 ```
 
-## 2NF - Second Normal Form
+## Second Normal Form
 
 **Rule:** Must be in 1NF first. Every column depends on the entire key.
 
@@ -102,7 +102,7 @@ Each table now has data that truly belongs there:
 - `orders` → order-level info (customer, date)
 - `order_items` → line-item info (product, price paid)
 
-## 3NF - Third Normal Form
+## Third Normal Form
 
 **Rule:** Must be in 2NF first. No column should depend on another non-key column.
 
@@ -143,7 +143,7 @@ FROM order_items;
 
 Store only what can't be derived from other data.
 
-## BCNF - Boyce-Codd Normal Form
+## Boyce-Codd Normal Form
 
 **Rule:** A stricter 3NF. Handles tricky cases where columns determine each other.
 

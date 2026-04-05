@@ -2,6 +2,10 @@
 import { ArrowBigLeft } from "@lucide/astro";
 import RootLayout from "./RootLayout.astro";
 const { sections } = Astro.props;
+
+function slugify(text: string) {
+  return text.toLowerCase().replace(/\s+/g, "-");
+}
 ---
 
 <RootLayout>
@@ -12,13 +16,17 @@ const { sections } = Astro.props;
       <a href="/" class="btn btn-sm"><ArrowBigLeft class="h-4 w-4" /> Home</a>
     </article>
     <aside
-      class="w-sm shrink-0 p-8 sticky top-0 h-screen overflow-y-auto border-s border-base-300 prose prose-a:no-underline prose-a:text-sm"
+      class="w-sm shrink-0 p-8 sticky top-0 h-screen overflow-y-auto border-s border-base-300 prose prose-a:no-underline prose-a:text-sm prose-a:text-base-content/70 prose-a:hover:text-base-content"
     >
-      <h5>On this page</h5>
+      <h4>On this page</h4>
       <div class="mt-6 space-y-1">
         {
-          sections?.map((sec) => (
-            <a href={`#${sec}`} class="block">
+          sections?.map((sec: string) => (
+            <a
+              href={`#${slugify(sec)}`}
+              class="block"
+              data-section={slugify(sec)}
+            >
               {sec}
             </a>
           ))
