@@ -47,3 +47,4 @@ When writing notes in `src/content/notes/`:
 - Be concise - answer in 1-3 sentences
 - Don't add comments to code unless asked
 - Don't create new folders unless explicitly requested
+test
