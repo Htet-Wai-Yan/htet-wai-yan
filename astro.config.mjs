@@ -7,7 +7,7 @@ import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://htet-wai-yan.github.io",
+  site: "https://htet-wai-yan",
   integrations: [mdx()],
 
   output: "server",
